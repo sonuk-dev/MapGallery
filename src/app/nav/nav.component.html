@@ -5,4 +5,4 @@
            accept="image/*"
            >
 </label> -->
-<input type="file" (change) = "onFileSelected($event)">
+<input type="file" accept="image/*" (change) = "onFileSelected($event.target.files[0])">

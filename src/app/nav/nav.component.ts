@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 import EXIF from 'exif-js'; 
+
 
 @Component({
   selector: 'app-nav',
@@ -7,24 +9,12 @@ import EXIF from 'exif-js';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+  @Output() newImageEvent = new EventEmitter();
   constructor() { }
-  onFileSelected(event){
-    console.log(event.target.files[0])
-    // private getExif() {
-      // let allMetaData: any;
-      EXIF.getData(event.target.files[0], function () {
-        // `this` is provided image, check with `console.log(this)`
-        console.log(this)
-      
-        console.log(EXIF.getTag(this, "Make")) 
-      // var model = EXIF.getTag(this, "Model");
-      });
 
-      
-    // }
+  onFileSelected(value) {
+    this.newImageEvent.emit(value);
   }
   ngOnInit(): void {
   }
-
 }
