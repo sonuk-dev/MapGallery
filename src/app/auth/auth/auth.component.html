@@ -1,7 +1,7 @@
 <div id="body">
     <div #container class="container" id="container">
         <div class="form-container sign-up-container">
-            <form>
+            <form [formGroup]="createUser">
                 <h1>Create Account</h1>
                 <!-- <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -12,21 +12,37 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label>Name</mat-label>
-                    <input type="text" matInput>
+                    <input type="text" matInput formControlName="name">
+                    <mat-error *ngIf="createUser.get('name').hasError('required')">
+                        Name is <strong>required</strong>
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input type="email" matInput>
+                    <input type="email" matInput formControlName="email">
+                    <mat-error *ngIf="createUser.get('email').invalid && !createUser.get('email').hasError('required')">
+                        Please enter a <strong>valid</strong> email address
+                    </mat-error>
+                    <mat-error *ngIf="createUser.get('email').hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input type="password" matInput>
+                    <input type="password" matInput formControlName="password">
+                    <mat-error
+                        *ngIf="createUser.get('password').hasError('minlength') && !createUser.get('password').hasError('required')">
+                        Min 6 characters
+                    </mat-error>
+                    <mat-error *ngIf="createUser.get('password').hasError('required')">
+                        Password is <strong>required</strong>
+                    </mat-error>
                 </mat-form-field>
-                <button>Sign Up</button>
+                <button (click)="register()">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form [formGroup]="loginUser">
                 <h1>Log in</h1>
                 <!-- <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -36,13 +52,26 @@
                 <span>or use your account</span> -->
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input type="email" matInput>
+                    <input type="email" matInput formControlName="email">
+                    <mat-error *ngIf="loginUser.get('email').invalid && !loginUser.get('email').hasError('required')">
+                        Please enter a <strong>valid</strong> email address
+                    </mat-error>
+                    <mat-error *ngIf="loginUser.get('email').hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input type="password" matInput>
+                    <input type="password" matInput formControlName="password">
+                    <mat-error
+                        *ngIf="loginUser.get('password').hasError('minlength') && !loginUser.get('password').hasError('required')">
+                        Min 6 characters
+                    </mat-error>
+                    <mat-error *ngIf="loginUser.get('password').hasError('required')">
+                        Password is <strong>required</strong>
+                    </mat-error>
                 </mat-form-field>
-                <button>Log In</button>
+                <button (click)="login()">Log In</button>
             </form>
         </div>
         <div class="overlay-container">
