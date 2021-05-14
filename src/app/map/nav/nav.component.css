@@ -1,0 +1,95 @@
+#nav {
+    width: 35%;
+    height: 100%;
+    overflow: auto; 
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+   /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey; 
+}
+ /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(126, 126, 126); 
+    border-radius: 10px;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(82, 82, 82); 
+}  
+.inp{
+    display: none;
+}
+.wrapper {
+    position: relative;
+    width: 50%;
+    height: 200px;
+    display: inline-block;
+}
+.video {
+    height: 200px;
+    overflow: hidden;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle1 {
+    top: 0px;
+    left: 90px;
+    clip-path: circle(70px);
+}
+
+.circle2 {
+    top: -50px;
+    left: 190px;
+    clip-path: circle(30px);
+}
+video {
+    position: fixed;
+    background: #c4cbde;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 500px;
+    /* width: auto;
+    height: auto; */
+    transform: translate(-50%, -50%);
+}
+.inp{
+    display: none;
+}
+label{
+    cursor: pointer;
+    
+}
+.text{
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    color: black;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+}
+.text:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.text:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
