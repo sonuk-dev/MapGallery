@@ -1,19 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AgmCoreModule } from '@agm/core'
+import { AgmCoreModule } from '@agm/core';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery'
 import { AuthModule } from "./auth/auth.module";
+import { MapModule } from "./map/map.module";
+
 import { AppComponent } from './app.component';
-import { MapComponent } from './map/map.component';
-import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MapComponent,
-    NavComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       apiKey: 'AIzaSyDdDp_J2ZQIo9Wz38DY41G6OUSxopK6oeo'
     }),
     AuthModule,
-    BrowserAnimationsModule
+    MapModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    Angular2ImageGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
