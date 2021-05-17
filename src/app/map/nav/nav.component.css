@@ -2,6 +2,7 @@
     width: 35%;
     height: 100%;
     overflow: auto; 
+    position: relative;
 }
 
 ::-webkit-scrollbar {
@@ -64,8 +65,7 @@ video {
     display: none;
 }
 label{
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
 .text{
     position: absolute;
@@ -92,4 +92,14 @@ label{
 .text:hover:after { 
     width: 100%; 
     left: 0; 
+}
+
+#logout {
+    cursor: pointer;
+    position: absolute;
+    bottom: 4px;
+    right: 50%;
+    text-decoration: underline;
+    font-style: italic;
+    color: rgb(54, 54, 54);
 }

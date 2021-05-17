@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { MapService } from "../map.service";
 
 @Component({
@@ -10,12 +8,15 @@ import { MapService } from "../map.service";
 })
 export class NavComponent implements OnInit {
 
-  @Output() newImageEvent = new EventEmitter();
 
   constructor(public mapService: MapService) { }
 
-  onFileSelected(value) {
-    this.newImageEvent.emit(value);
+  onFileSelected(file) {
+    this.mapService.onUpload(file)
+  }
+
+  logout() {
+    this.mapService.logout()
   }
 
   ngOnInit(): void {
