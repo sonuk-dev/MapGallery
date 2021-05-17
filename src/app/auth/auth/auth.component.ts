@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from "../auth.service";
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -8,7 +10,7 @@ import { AuthService } from "../auth.service";
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   loginUser = new FormGroup({
     email: new FormControl('', Validators.compose([
@@ -38,12 +40,10 @@ export class AuthComponent implements OnInit {
   }
 
   openSignUp() {
-    console.log(this.container.nativeElement.classList)
     this.container.nativeElement.classList.add("right-panel-active");
   }
 
   openSignIn() {
-    console.log(this.container.nativeElement.classList)
     this.container.nativeElement.classList.remove("right-panel-active");
   }
 
@@ -58,10 +58,10 @@ export class AuthComponent implements OnInit {
     }).subscribe(
       (res: any) => {
         // this.serverError.emailDuplicate = false;
-        console.log(res.user)
+        console.log(res.user,11111111111111111111)
         localStorage.setItem('currentUser', JSON.stringify(res.user));
         localStorage.setItem('token', res.token);
-        // this.router.navigate(['/game']);
+        this.router.navigate(['/map/nav']);
       },
       (err) => {
         // "E11000 duplicate key error collection: Cluster0.users index: email_1 dup key: { email: "email@email" }"
@@ -85,7 +85,7 @@ export class AuthComponent implements OnInit {
           // this.serverError.wrondPassword = false;
           localStorage.setItem('currentUser', JSON.stringify(res.user));
           localStorage.setItem('token', res.token);
-          // this.router.navigate(['/game']);
+          this.router.navigate(['/map/nav']);
         },
         (err) => {
           console.log(err)
