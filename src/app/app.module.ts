@@ -4,7 +4,6 @@ import { AgmCoreModule } from '@agm/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { Angular2ImageGalleryModule } from 'angular2-image-gallery'
 import { AuthModule } from "./auth/auth.module";
 import { MapModule } from "./map/map.module";
 
@@ -25,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MapModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    Angular2ImageGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
