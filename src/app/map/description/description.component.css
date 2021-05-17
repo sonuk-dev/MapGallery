@@ -1,0 +1,18 @@
+#con {
+    width: 35%;
+    height: 100%;
+    position: relative;
+}
+
+img {
+    position: absolute;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+}
+mat-icon{
+    position: absolute;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+}
