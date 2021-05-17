@@ -1,6 +1,5 @@
 <div id="nav">
     <div class="wrapper">
-        <!-- <input id="check" type="checkbox"> -->
         <div class="video circle1">
             <video src="https://www.robmillsarchitects.com/files/land/city/RMA_Web_land_city_1.mp4" loop muted autoplay></video>
         </div>
@@ -17,5 +16,8 @@
     </div>
     <div>
         <app-images></app-images>
+    </div>
+    <div routerLink="/auth" routerLinkActive="active" (click)="logout()" id="logout">
+        Log out
     </div>
 </div>
