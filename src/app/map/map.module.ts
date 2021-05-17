@@ -6,17 +6,21 @@ import { MapRoutingModule } from './map-routing.module';
 import { MapComponent } from "./map/map.component";
 import { NavComponent } from "./nav/nav.component";
 import { ImagesComponent } from './images/images.component';
+import { DescriptionComponent } from './description/description.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     MapComponent,
     NavComponent,
-    ImagesComponent
+    ImagesComponent,
+    DescriptionComponent
   ],
   imports: [
     CommonModule,
     MapRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   exports: [
     MapComponent,
