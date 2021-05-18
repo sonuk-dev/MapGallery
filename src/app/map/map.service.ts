@@ -31,21 +31,24 @@ export class MapService {
       console.log(file)
       let GPS = env.getGPSDec(
         EXIF.getTag(this, "GPSLatitude"),
-        EXIF.getTag(this, "GPSLongitude")
+        EXIF.getTag(this, "GPSLongitude"),
+        EXIF.getTag(this, "GPSLatitudeRef"),
+        EXIF.getTag(this, "GPSLongitudeRef"),
       );
       env.GPS.next(GPS);
+      console.log(env.GPS.value)
       const formData = new FormData();
       formData.append('file', file);
-      formData.append('gps', JSON.stringify(GPS));
+      formData.append('gps', JSON.stringify(env.GPS.value));
       env.addImage(formData);
     });
   }
 
-  getGPSDec(gpsLat, gpsLng) {
+  getGPSDec(gpsLat, gpsLng, latRef, lngRef) {
     let latDec = gpsLat[0] + gpsLat[1] / 60 + gpsLat[2] / 3600;
     let lngDec = gpsLng[0] + gpsLng[1] / 60 + gpsLng[2] / 3600;
-    let latRef = EXIF.getTag(this, "GPSLatitudeRef");
-    let lngRef = EXIF.getTag(this, "GPSLongitudeRef");
+
+    console.log(latRef, lngRef)
     if (latRef == 'S') {
       latDec *= -1;
     }
