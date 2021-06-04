@@ -3,6 +3,7 @@
     height: 100%;
     overflow: auto; 
     position: relative;
+    box-shadow:  0 6px 30px 0 rgba(0, 0, 0, 0.507);
 }
 
 ::-webkit-scrollbar {
@@ -96,9 +97,10 @@ label{
 
 #logout {
     cursor: pointer;
-    position: absolute;
-    bottom: 4px;
-    right: 50%;
+    /* position: absolute; */
+    position: fixed;
+    bottom: 0px;
+    left: 12.5%;
     text-decoration: underline;
     font-style: italic;
     color: rgb(54, 54, 54);
