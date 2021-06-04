@@ -16,9 +16,7 @@ export class ImagesComponent {
   }
 
   image(event, index) {
-    console.log(index)
     this.mapService.imageIndex.next(index);
-    // this.showMarker.emit(index);
-    this.router.navigate(['/map/description', { src: event.target.currentSrc }]);
+    this.router.navigate(['/map/description', { src: event.target.currentSrc, index: index}]);
   }
 }
