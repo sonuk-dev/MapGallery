@@ -58,7 +58,6 @@ export class AuthComponent implements OnInit {
     }).subscribe(
       (res: any) => {
         // this.serverError.emailDuplicate = false;
-        console.log(res.user,11111111111111111111)
         localStorage.setItem('currentUser', JSON.stringify(res.user));
         localStorage.setItem('token', res.token);
         this.router.navigate(['/map/nav']);
@@ -80,7 +79,6 @@ export class AuthComponent implements OnInit {
     this.authService.login(this.loginUser.get('email').value, this.loginUser.get('password').value)
       .subscribe(
         (res: any) => {
-          console.log('user', res.user)
           // this.serverError.userNotExist = false;
           // this.serverError.wrondPassword = false;
           localStorage.setItem('currentUser', JSON.stringify(res.user));

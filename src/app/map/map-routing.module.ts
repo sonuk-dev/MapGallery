@@ -2,26 +2,30 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MapComponent } from './map/map.component';
 import { DescriptionComponent } from './description/description.component';
-import { ImagesComponent } from './images/images.component';
 import { NavComponent } from './nav/nav.component';
+import { FindLocComponent } from './find-loc/find-loc.component'
 
 const routes: Routes = [
-  // { path: 'map', component: MapComponent },
   {
     path: '',
     component: MapComponent,
     children: [
       {
         path: 'description', component: DescriptionComponent, data: {
-          src: String
+          src: String, 
+          index: Number
         }
       },
       { path: 'nav', component: NavComponent },
       { path: '', component: NavComponent },
-      // { path: 'map', component: MapComponent },
+      {
+        path: 'findLoc', component: FindLocComponent, data: {
+          url: String,
+        }
+      },
     ],
   },
-  { path: 'auth', loadChildren: () => import('../auth/auth.module').then(m => m.AuthModule),}
+  { path: 'auth', loadChildren: () => import('../auth/auth.module').then(m => m.AuthModule), }
 ];
 
 @NgModule({
