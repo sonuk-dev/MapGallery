@@ -1,18 +1,88 @@
 #con {
     width: 35%;
     height: 100%;
-    position: relative;
+    box-shadow:  0 6px 30px 0 rgba(0, 0, 0, 0.507);
+}
+
+#image {
+    /* position: relative; */
+    width: 100%;
+    height: auto;
 }
 
 img {
-    position: absolute;
+    /* position: absolute; */
     margin: 0px;
     width: 100%;
     height: auto;
 }
-mat-icon{
-    position: absolute;
-    color: white;
+
+#close {
+    color: rgba(0, 0, 0, 0.63);
+    position: relative;
+    z-index: 1;
     margin: 5px;
     cursor: pointer;
+}
+
+#picture {
+    width: 100%;
+    height: auto;
+}
+
+.circle mat-icon {
+    color: white;
+}
+.circle {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    display: inline-flex;
+    justify-content:  center;
+    align-items:center;
+    border-radius: 60px;
+    background-color: cornflowerblue;
+    text-align: center;
+    cursor: pointer;
+}
+.by{
+    display: inline-flex;
+    justify-content:  center;
+    align-items:center;
+    width: 40px;
+    height: 40px;
+    border: 1px rgba(0, 0, 0, 0.37) solid;
+    text-align: center;
+    cursor: pointer;
+}
+
+.allBy{
+    margin-left: 40px;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.min{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+input[type="radio"] { display:none; }
+
+input:checked + label {
+    background-color: rgba(0, 0, 0, 0.158);
+}
+
+.form {
+    width: auto;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.example-form-field {
+    width: 200px;
+}
+
+.circles {
+    text-align: center;
 }

@@ -1,4 +1,166 @@
 <div id="con">
-    <img [src]="domSanitizer.bypassSecurityTrustUrl(src)" alt="">
-    <mat-icon (click)="close()">close</mat-icon>
+    <div id="picture">
+        <div id="image">
+            <mat-icon id="close" (click)="close()">close</mat-icon>
+            <img [src]="domSanitizer.bypassSecurityTrustUrl(src)" alt="">
+        </div>
+    </div>
+    <div>
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="Search by radius">
+                <div class="form">
+                    <mat-form-field>
+                        <mat-label>Radius(m)</mat-label>
+                        <mat-select [(value)]="radius">
+                            <mat-option value=100>
+                                100
+                            </mat-option>
+                            <mat-option value=500>
+                                500
+                            </mat-option>
+                            <mat-option value=1000>
+                                1000
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="circles">
+                    <div class="circle" style="background-color: rgba(228, 75, 55, 0.644);"
+                        (click)="searchByRadius('accommodation.motel,accommodation.hotel,accommodation.hut,accommodation.apartment,accommodation.chalet,accommodation.guest_house,accommodation.hostel')">
+                        <mat-icon>hotel</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(47, 115, 161, 0.651);"
+                        (click)="searchByRadius('catering.restaurant,catering.fast_food,catering.food_court,catering,catering.bar,catering.pub,catering.ice_cream,catering.cafe,catering.biergarten')">
+                        <mat-icon>restaurant</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(72, 57, 139, 0.664);"
+                        (click)="searchByRadius('commercial.department_store,commercial.supermarket,commercial.marketplace,commercial.shopping_mall,commercial.elektronics,commercial.clothing,commercial.watches,commercial.books,commercial.furniture_and_interior,commercial.bag,commercial.gift_and_souvenir,commercial.weapons')">
+                        <mat-icon>local_grocery_store</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(34, 129, 47, 0.644);"
+                        (click)="searchByRadius('healthcare.clinic_or_praxis,healthcare.dentist,healthcare.hospital,healthcare.pharmacy')">
+                        <mat-icon>local_hospital</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(65, 134, 94, 0.644);"
+                        (click)="searchByRadius('education.school,education.driving_school,education.music_school,education.language_school,education.library,education.college,education.university')">
+                        <mat-icon>school</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(221, 172, 99, 0.644);"
+                        (click)="searchByRadius('parking.cars,parking.multistorey,parking.underground,parking.rooftop')">
+                        <mat-icon> local_parking</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(189, 100, 170, 0.644);"
+                        (click)="searchByRadius('commercial.gas')">
+                        <mat-icon> local_gas_station</mat-icon>
+                    </div>
+                </div>
+
+            </mat-tab>
+            <mat-tab label="Search by isoline">
+
+                <div class="allBy">
+
+                    <input type='radio' [formControl]="means" value='drive' id='drive' checke />
+                    <label for="drive" class="by">
+                        <mat-icon> directions_car</mat-icon>
+                    </label>
+
+                    <input type='radio' [formControl]="means" value='truck' id='truck' />
+                    <label for="truck" class="by">
+                        <mat-icon> local_shipping</mat-icon>
+                    </label>
+
+                    <input type='radio' [formControl]="means" value='walk' id='walk' />
+                    <label for="walk" class="by">
+                        <mat-icon> directions_walk</mat-icon>
+                    </label>
+
+                    <input type='radio' [formControl]="means" value='bicycle' id='bicycle' />
+                    <label for="bicycle" class="by">
+                        <mat-icon> directions_bike</mat-icon>
+                    </label>
+
+                    <input type='radio' [formControl]="means" value='approximated_transit' id='approximated_transit' />
+                    <label for="approximated_transit" class="by">
+                        <mat-icon> directions_bus</mat-icon>
+                    </label>
+
+                </div>
+                <mat-form-field class="min">
+                    <mat-label>Max travel time(min)</mat-label>
+                    <mat-select [(value)]="range">
+                        <mat-option value=300>
+                            5 min
+                        </mat-option>
+                        <mat-option value=600>
+                            10 min
+                        </mat-option>
+                        <mat-option value=900>
+                            15 min
+                        </mat-option>
+                        <mat-option value=1200>
+                            20 min
+                        </mat-option>
+                        <mat-option value=1500>
+                            25 min
+                        </mat-option>
+                        <mat-option value=1800>
+                            30 min
+                        </mat-option>
+                        <mat-option value=2100>
+                            35 min
+                        </mat-option>
+                        <mat-option value=2400>
+                            40 min
+                        </mat-option>
+                        <mat-option value=2700>
+                            45 min
+                        </mat-option>
+                        <mat-option value=3000>
+                            50 min
+                        </mat-option>
+                        <mat-option value=3300>
+                            55 min
+                        </mat-option>
+                        <mat-option value=3600>
+                            60 min
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- </form> -->
+
+                <div class="circles">
+                    <div class="circle" style="background-color: rgba(228, 75, 55, 0.644);"
+                        (click)="searchByIsoline('accommodation.motel,accommodation.hotel,accommodation.hut,accommodation.apartment,accommodation.chalet,accommodation.guest_house,accommodation.hostel')">
+                        <mat-icon>hotel</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(47, 115, 161, 0.651);"
+                        (click)="searchByIsoline('catering.restaurant,catering.fast_food,catering.food_court,catering,catering.bar,catering.pub,catering.ice_cream,catering.cafe,catering.biergarten')">
+                        <mat-icon>restaurant</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(72, 57, 139, 0.664);"
+                        (click)="searchByIsoline('commercial.department_store,commercial.supermarket,commercial.marketplace,commercial.shopping_mall,commercial.elektronics,commercial.clothing,commercial.watches,commercial.books,commercial.furniture_and_interior,commercial.bag,commercial.gift_and_souvenir,commercial.weapons')">
+                        <mat-icon>local_grocery_store</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(34, 129, 47, 0.644);"
+                        (click)="searchByIsoline('healthcare.clinic_or_praxis,healthcare.dentist,healthcare.hospital,healthcare.pharmacy')">
+                        <mat-icon>local_hospital</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(65, 134, 94, 0.644);"
+                        (click)="searchByIsoline('education.school,education.driving_school,education.music_school,education.language_school,education.library,education.college,education.university')">
+                        <mat-icon>school</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(221, 172, 99, 0.644);"
+                        (click)="searchByIsoline('parking.cars,parking.multistorey,parking.underground,parking.rooftop')">
+                        <mat-icon> local_parking</mat-icon>
+                    </div>
+                    <div class="circle" style="background-color: rgba(189, 100, 170, 0.644);"
+                        (click)="searchByIsoline('commercial.gas')">
+                        <mat-icon> local_gas_station</mat-icon>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
 </div>
