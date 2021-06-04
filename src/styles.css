@@ -9,3 +9,11 @@ html {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mapboxgl-ctrl-geocoder {
+    width: 100%!important;
+    max-width: 1000px;
+}
+.mapboxgl-ctrl-geocoder--input {
+    height: 45px;
+    padding: 6px 35px;
+}
