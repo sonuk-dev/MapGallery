@@ -1,0 +1,9 @@
+<div id="con">
+    <mat-icon id="close" (click)="close()">close</mat-icon>
+    <div id="image">
+        <img [src]="url" alt="">
+    </div>
+    <p>This image doesn't have a geolocation data. Please add it manually.</p>
+    <div id="geocoder" class="geocoder"></div>
+    <button class="button" (click)="setGeolocation()">set geolocation <mat-icon> vertical_align_bottom</mat-icon></button>
+</div>
