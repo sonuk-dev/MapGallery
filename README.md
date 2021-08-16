@@ -7,7 +7,7 @@ It's a web page where you can store your images. After uploading picture program
 ### Clone the repo
 
 ```shell
-git clone https://github.com/SonaGharibyan/MapGallery
+git clone https://github.com/sonuk-dev/MapGallery
 cd MapGallery
 ```
 
