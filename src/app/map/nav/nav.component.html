@@ -1,17 +1,17 @@
 <div id="nav">
     <div class="wrapper">
-        <div class="video circle1">
+        <!-- <div class="video circle1">
             <video src="https://www.robmillsarchitects.com/files/land/city/RMA_Web_land_city_1.mp4" loop muted autoplay></video>
         </div>
         <div class="video circle2">
             <video src="https://www.robmillsarchitects.com/files/land/city/RMA_Web_land_city_2.mp4" loop muted autoplay></video>
-        </div>
-        <img src="../../../assets/binb.png" style="height: 60px;" alt="">
+        </div> -->
+        <img src="../../../assets/binb.png" style="height: 200px; display: inline-block;" alt="">
         <div class="text">
             <label class="but">
                 <input class="inp" type="file" name="file" accept="image/*"
                     (change)="onFileSelected($event.target.files[0])">
-                    ADD PHOTO
+                <div class="ghost" id="addPhoto">ADD PHOTO</div>
             </label>
         </div>
     </div>

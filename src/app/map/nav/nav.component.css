@@ -62,38 +62,47 @@ video {
     height: auto; */
     transform: translate(-50%, -50%);
 }
+
+
+#addPhoto {
+	border-radius: 20px;
+	border: 1px solid #254072;
+	color: #254072;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    display: inline-block;
+	background-color: transparent;
+}
+
+img {
+    /* float: left; */
+    display: inline-block;
+}
 .inp{
     display: none;
 }
+
 label{
-    cursor: pointer;  
+    cursor: pointer;
 }
+
 .text{
+    display: inline-block;
     position: absolute;
+    top: 50px;
     left: 200px;
-    top: 100px;
     color: black;
     letter-spacing: 0.15em;
     display: inline-block;
     padding: 15px 20px;
-    position: relative;
+    width: 200px;
 }
-.text:after {    
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: black;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
-.text:hover:after { 
-    width: 100%; 
-    left: 0; 
-}
+
+
 
 #logout {
     cursor: pointer;
