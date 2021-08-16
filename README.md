@@ -7,8 +7,8 @@ It's a web page where you can store your images. After uploading picture program
 ### Clone the repo
 
 ```shell
-git clone https://github.com/SonaGharibyan/Game-page
-cd Game-page
+git clone https://github.com/SonaGharibyan/MapGallery
+cd MapGallery
 ```
 
 ### Install npm packages
