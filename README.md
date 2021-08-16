@@ -17,7 +17,7 @@ Install the `npm` packages described in the `package.json` and verify that it wo
 
 ```shell
 npm install
-npm install @angular/cli
+npm install -g @angular/cli
 ng serve
 ```
 
